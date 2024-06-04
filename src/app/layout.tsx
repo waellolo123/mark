@@ -23,8 +23,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <div className="container mx-auto">
       <Header session={session}/>
         {children}
+      </div>
       </body>
     </html>
   );
