@@ -1,20 +1,20 @@
-
-import { HiPhoto } from "react-icons/hi2";
+"use client";
+import UploadArea from "@/components/UploadArea";
+import { UploadResponse } from "imagekit/dist/libs/interfaces";
+import { useState } from "react";
 import { TbCurrentLocation } from "react-icons/tb";
 
 export default function NewAdPage(){
+
+  const [files, setFiles] = useState<UploadResponse[]>([])
+
   return (
-    <form action="" className="max-w-[80%] mx-auto flex flex-col md:flex-row gap-8 ">
+    <form className="max-w-[80%] mx-auto flex flex-col md:flex-row gap-8 ">
 
       <div className="grow pt-8">
-        <div className="bg-gray-50 p-4 rounded">
-         <h2 className="text-slate-400 text-center text-xl font-semibold">Add photos of your product</h2>
-         <div className="flex flex-col items-center gap-4 mt-4">
-         <HiPhoto className="text-gray-200" size={100} />
-         ()
-         <button className="w-full bg-blue-500 text-white px-4 py-2 rounded">Add photos</button>
-         </div>
-        </div>
+
+        <UploadArea files={files} setFiles={setFiles} />
+        
         <div className="mt-8">
           <label htmlFor="" className="text-xl font-medium">Where is your product located?</label>
           <button className="flex items-center gap-2 py-2 border border-blue-500 px-4 mt-3 mb-6 rounded  text-blue-500 font-semibold">

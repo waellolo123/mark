@@ -8,3 +8,6 @@ input[type="text"], input[type="number"], select, textarea {
 form label {
   @apply text-xs text-slate-400 font-bold block uppercase mt-4 mb-1
 }
+label.upload-btn input[type="file"] {
+  display: none;
+}
